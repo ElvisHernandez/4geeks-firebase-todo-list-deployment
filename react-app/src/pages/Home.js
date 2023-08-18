@@ -17,7 +17,7 @@ export default function Home() {
 
     (async () => {
       try {
-        const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/helloWorld`);
+        const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-final-project/us-central1/helloWorld`);
         const text = await res.text();
 
         console.log(text);
@@ -41,7 +41,7 @@ export default function Home() {
             console.log('token: ', token);
             console.log('user: ', user);
 
-            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/signUpOrSigninUser`, {
+            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-final-project/us-central1/signUpOrSigninUser`, {
               method: 'post',
               body: JSON.stringify({ email: user.email }),
               headers: {

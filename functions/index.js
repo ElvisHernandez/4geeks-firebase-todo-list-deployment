@@ -6,7 +6,7 @@ const { initializeApp } = require('firebase-admin/app');
 const { getFirestore } = require('firebase-admin/firestore');
 const { getAuth } = require('firebase-admin/auth');
 
-const admin = initializeApp({ projectId: 'geeks-firebase-72e6d' });
+const admin = initializeApp({ projectId: 'geeks-final-project' });
 const auth = getAuth(admin);
 const firestore = getFirestore(admin);
 

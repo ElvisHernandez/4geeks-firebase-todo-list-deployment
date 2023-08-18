@@ -27,7 +27,7 @@ while : ; do
   sleep 1 
 done
 
-echo "GET_USERS_ENDPOINT=\"https://$CODESPACE_NAME-5001.preview.app.github.dev/geeks-firebase-72e6d/us-central1/getUsers\"" > ./functions/.env
+echo "GET_USERS_ENDPOINT=\"https://$CODESPACE_NAME-5001.preview.app.github.dev/geeks-final-project/us-central1/getUsers\"" > ./functions/.env
 echo "REACT_APP_FIREBASE_FUNCTIONS_HOST=\"https://$CODESPACE_NAME-5001.preview.app.github.dev\"" > ./react-app/.env;
 echo "REACT_APP_FIREBASE_FIRESTORE_HOST=\"https://$CODESPACE_NAME-5057.preview.app.github.dev\"" >> ./react-app/.env;
 echo "REACT_APP_FIREBASE_AUTH_HOST=\"https://$CODESPACE_NAME-9099.preview.app.github.dev\"" >> ./react-app/.env;

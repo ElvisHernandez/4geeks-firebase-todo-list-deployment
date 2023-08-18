@@ -17,7 +17,7 @@ export default function ContextProvider(props) {
 
                 console.log('User is signed in')
 
-                const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/signUpOrSigninUser`, {
+                const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-final-project/us-central1/signUpOrSigninUser`, {
                     method: 'post',
                     body: JSON.stringify({ email: user.email }),
                     headers: {

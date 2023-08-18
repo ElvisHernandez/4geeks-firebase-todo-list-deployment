@@ -13,7 +13,7 @@ export default function TodoList() {
     const addTodo = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/addTodo`, {
+            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-final-project/us-central1/addTodo`, {
                 method: 'post',
                 headers: {
                     'Content-Type': 'application/json'
@@ -31,7 +31,7 @@ export default function TodoList() {
 
     const getTodos = async () => {
         try {
-            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/getTodos`);
+            const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-final-project/us-central1/getTodos`);
             const data = await res.json();
             setTodos(data.data || []);
         }   
