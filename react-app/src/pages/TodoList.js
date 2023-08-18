@@ -7,15 +7,12 @@ export default function TodoList() {
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-
         getTodos();
     }, []);
 
     const addTodo = async (e) => {
         e.preventDefault();
-
         try {
-
             const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/addTodo`, {
                 method: 'post',
                 headers: {
@@ -24,8 +21,8 @@ export default function TodoList() {
                 body: JSON.stringify({ todo })
             })
 
-            const data = await res.json();
-            console.log(data);
+            await res.json();
+            getTodos();
         }
         catch (e) {
             console.error(e);
@@ -33,15 +30,10 @@ export default function TodoList() {
     }
 
     const getTodos = async () => {
-
         try {
-
             const res = await fetch(`${process.env.REACT_APP_FIREBASE_FUNCTIONS_HOST}/geeks-firebase-72e6d/us-central1/getTodos`);
             const data = await res.json();
-
-            console.log(data);
             setTodos(data.data || []);
-
         }   
         catch (e) {
             console.error(e);
@@ -60,11 +52,11 @@ export default function TodoList() {
                 <button onClick={addTodo}>Add</button>
             </form>
 
-            {todos.map((todo) => {
+            {todos.map((todo) => 
                 <div>
                     {todo.text}
                 </div>
-            })}
+            )}
 
         </div>
     );
